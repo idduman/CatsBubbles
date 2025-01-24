@@ -25,25 +25,43 @@ public class CatBehaviour : MonoBehaviour
     private float _stateTimer;
     private Vector2 _originalPos;
 
+    private float _sideMoveSpeed;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         _originalPos = _rb.position;
     }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Ground") && _jumpCheck)
+        {
+            _jumpCheck = false;
+            _jumping = false;
+
+            SetState((CatState)Random.Range(0,2));
+        }
+    }
 
     private void FixedUpdate()
+    {
+        if(!_jumping)
+            _rb.MovePosition(_rb.position + _sideMoveSpeed * Time.fixedDeltaTime * Vector2.right);
+    }
+
+    private void Update()
     {
         if (_jumping)
         {
             var vRotation = Mathf.Clamp(_rb.linearVelocityY * 30f, -65f, 65f);
-            Debug.Log($"lv: {_rb.linearVelocityY}, vRotation: {vRotation}");
             _spriteTransform.localRotation = Quaternion.Euler(0f,0f,vRotation);
         }
         else
         {
             _spriteTransform.localRotation = Quaternion.identity;
-            _stateTimer -= Time.fixedDeltaTime;
+            _stateTimer -= Time.deltaTime;
 
             if (_stateTimer <= 0)
             {
@@ -53,19 +71,18 @@ public class CatBehaviour : MonoBehaviour
             switch(_state)
             {
                 case CatState.Idle:
-                    break;
                 case CatState.Idle2:
-                    break;
                 case CatState.Licking:
+                    _sideMoveSpeed = 0f;
                     break;
                 case CatState.WalkingLeft:
-                    _rb.MovePosition(_rb.position + _speed * Time.fixedDeltaTime * Vector2.left);
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.2f)
+                    _sideMoveSpeed = -_speed;
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.18f)
                         ChangeState();
                     break;
                 case CatState.WalkingRight:
-                    _rb.MovePosition(_rb.position + _speed * Time.fixedDeltaTime * Vector2.right);
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.2f)
+                    _sideMoveSpeed = _speed;
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.18f)
                         ChangeState();
                     break;
                 default:
@@ -85,14 +102,21 @@ public class CatBehaviour : MonoBehaviour
         {
             case CatState.Idle:
             case CatState.Idle2:
-                _stateTimer = Random.Range(0.8f, 1.6f);
-                SetState((CatState)Random.Range(3,5));
+                _stateTimer = Random.Range(0.8f, 1.4f);
+                
+                if(_rb.position.x - _originalPos.x > 0.1f)
+                    SetState(CatState.WalkingLeft);
+                else if(_rb.position.x - _originalPos.x < -0.1f)
+                    SetState(CatState.WalkingRight);
+                else
+                    SetState((CatState)Random.Range(3,5));
+                
                 break;
             case CatState.Licking:
                 break;
             case CatState.WalkingLeft:
             case CatState.WalkingRight:
-                _stateTimer = Random.Range(0.8f, 1.6f);
+                _stateTimer = Random.Range(0.8f, 1.4f);
                 SetState((CatState)Random.Range(0,2));
                 break;
             default:
@@ -122,17 +146,6 @@ public class CatBehaviour : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);
         }
         _state = state;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.CompareTag("Ground") && _jumpCheck)
-        {
-            _jumpCheck = false;
-            _jumping = false;
-
-            _animator.Play("Idle");
-        }
     }
 
     private void Jump()

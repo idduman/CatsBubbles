@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2324233638128795300}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1950527908289586216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4458370547924374059}
   - component: {fileID: 8923782385330968553}
   - component: {fileID: 852535339272739482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cat_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bottom: {fileID: 1987896797565496009}
   _spriteTransform: {fileID: 1950527908289586216}
+  _flip: {fileID: 2324233638128795300}
 --- !u!61 &8923782385330968553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -195,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987896797565496009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
