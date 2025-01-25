@@ -119,6 +119,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &159639695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159639696}
+  - component: {fileID: 159639697}
+  m_Layer: 0
+  m_Name: BubbleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159639696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159639695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.58, y: -0.15, z: -0.011681033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159639697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159639695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff291d9e56c9464e9ace4ae23cdd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubblePrefab: {fileID: 3325007936541217805, guid: 54ace74723cf6a142a967c9548d01268, type: 3}
+  _flipDirection: 0
+  _scaleMin: 0.8
+  _scaleMax: 1.2
+  _spawnIntervalMin: 0.8
+  _spawnIntervalMax: 1.2
+  _speedMin: 0.4
+  _speedMax: 0.6
+  Spawning: 0
 --- !u!1001 &305428525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,7 +508,7 @@ GameObject:
   - component: {fileID: 963144696}
   - component: {fileID: 963144695}
   - component: {fileID: 963144694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Border_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +823,7 @@ GameObject:
   - component: {fileID: 1504348379}
   - component: {fileID: 1504348378}
   - component: {fileID: 1504348377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Border_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1210,7 @@ GameObject:
   - component: {fileID: 1763043402}
   - component: {fileID: 1763043401}
   - component: {fileID: 1763043400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Border_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,6 +1333,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2120734494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1938025575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938025577}
+  - component: {fileID: 1938025576}
+  m_Layer: 0
+  m_Name: BubbleSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1938025576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938025575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff291d9e56c9464e9ace4ae23cdd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubblePrefab: {fileID: 3325007936541217805, guid: 54ace74723cf6a142a967c9548d01268, type: 3}
+  _flipDirection: 1
+  _scaleMin: 0.8
+  _scaleMax: 1.2
+  _spawnIntervalMin: 0.8
+  _spawnIntervalMax: 1.2
+  _speedMin: 0.4
+  _speedMax: 0.6
+  Spawning: 0
+--- !u!4 &1938025577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938025575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.53, y: 0.24, z: -0.011681033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2072312234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5461503249452886421, guid: 6e0f459262097734cac9c05740cee117, type: 3}
@@ -1328,3 +1434,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 2120734494}
   - {fileID: 728706033}
+  - {fileID: 159639696}
+  - {fileID: 1938025577}
