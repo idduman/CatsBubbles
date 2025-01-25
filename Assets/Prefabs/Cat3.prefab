@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 4080319615663928208}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8c425d1f1bd6f8747a9cc0bced85c433, type: 2}
+  m_Controller: {fileID: 22100000, guid: 157082fe3bed1ab45b2ec9ed9c4c4790, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,11 +120,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.443
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.676
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.z
