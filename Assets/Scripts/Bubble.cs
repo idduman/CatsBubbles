@@ -7,6 +7,8 @@ public class Bubble : MonoBehaviour
     [SerializeField] private Transform _bubbleParent;
     [SerializeField] private SpriteRenderer _bubbleSprite;
 
+    private ColorType _colorType;
+    
     private Rigidbody2D _rb;
     private float _hSpeed;
     private float _yOrigin;
@@ -34,8 +36,9 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.TryGetComponent<CatBehaviour>(out var cat)
-           && cat)
+        if (other.TryGetComponent<CatBehaviour>(out var cat)
+            && cat.ColorTypeType == _colorType)
+            GameManager.Instance.AddScore(10);
         
         Destroy(gameObject);
     }
@@ -52,6 +55,7 @@ public class Bubble : MonoBehaviour
 
     public void SetColor(ColorType colorType)
     {
+        _colorType = colorType;
         var color = GameManager.Instance.GetColor(colorType);
         color.a = _bubbleSprite.color.a;
         _bubbleSprite.color = color;

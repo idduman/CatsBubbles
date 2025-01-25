@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: _color
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4458370547924374059, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
+      propertyPath: _colorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5872207583309505945, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_Name
       value: Cat2

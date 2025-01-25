@@ -1,8 +1,7 @@
 using System;
 using System.Collections;
-using System.Diagnostics;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class CatBehaviour : MonoBehaviour
@@ -10,9 +9,11 @@ public class CatBehaviour : MonoBehaviour
     [SerializeField] private Transform _bottom;
     [SerializeField] private Transform _spriteTransform; 
     [SerializeField] private Transform _flip;
-    [SerializeField] private ColorType _color;
+    [SerializeField] private ColorType _colorType;
 
-    private static readonly float _speed = 0.2f;
+    public ColorType ColorTypeType => _colorType;
+
+    private static readonly float _speed = 0.1f;
 
     private CatState _state;
     
@@ -78,12 +79,12 @@ public class CatBehaviour : MonoBehaviour
                     break;
                 case CatState.WalkingLeft:
                     _sideMoveSpeed = -_speed;
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.18f)
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.1f)
                         ChangeState();
                     break;
                 case CatState.WalkingRight:
                     _sideMoveSpeed = _speed;
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.18f)
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.1f)
                         ChangeState();
                     break;
                 default:
@@ -100,9 +101,9 @@ public class CatBehaviour : MonoBehaviour
             case CatState.Idle2:
                 _stateTimer = Random.Range(0.8f, 1.4f);
                 
-                if(_rb.position.x - _originalPos.x > 0.1f)
+                if(_rb.position.x - _originalPos.x > 0.07f)
                     SetState(CatState.WalkingLeft);
-                else if(_rb.position.x - _originalPos.x < -0.1f)
+                else if(_rb.position.x - _originalPos.x < -0.07f)
                     SetState(CatState.WalkingRight);
                 else
                     SetState((CatState)Random.Range(3,5));
