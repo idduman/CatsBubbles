@@ -41,5 +41,7 @@ public class BubbleSpawner : MonoBehaviour
         var speed = (_flipDirection ? -1f : 1f) * Random.Range(_speedMin, _speedMax);
         bubble.SetBubbleScale(Random.Range(_scaleMin, _scaleMax));
         bubble.SetHorizontalSpeed(speed);
+        var color = (ColorType)Random.Range(0, 6);
+        bubble.SetColor(color);
     }
 }

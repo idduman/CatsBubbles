@@ -49,4 +49,11 @@ public class Bubble : MonoBehaviour
     {
         _bubbleParent.localScale = new Vector3(scale, scale, scale);
     }
+
+    public void SetColor(ColorType colorType)
+    {
+        var color = GameManager.Instance.GetColor(colorType);
+        color.a = _bubbleSprite.color.a;
+        _bubbleSprite.color = color;
+    }
 }
