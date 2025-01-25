@@ -90,11 +90,6 @@ public class CatBehaviour : MonoBehaviour
             }
         }
     }
-    
-    private void OnMouseDown()
-    {
-        Jump();
-    }
 
     private void ChangeState()
     {
@@ -148,7 +143,7 @@ public class CatBehaviour : MonoBehaviour
         _state = state;
     }
 
-    private void Jump()
+    public void Jump()
     {
         if (_jumping)
             return;
