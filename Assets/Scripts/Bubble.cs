@@ -34,8 +34,8 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        /*if (!other.TryGetComponent<CatBehaviour>(out var cat))
-            return;*/
+        if(other.TryGetComponent<CatBehaviour>(out var cat)
+           && cat)
         
         Destroy(gameObject);
     }

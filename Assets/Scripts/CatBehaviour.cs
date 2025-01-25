@@ -10,6 +10,7 @@ public class CatBehaviour : MonoBehaviour
     [SerializeField] private Transform _bottom;
     [SerializeField] private Transform _spriteTransform; 
     [SerializeField] private Transform _flip;
+    [SerializeField] private ColorType _color;
 
     private static readonly float _speed = 0.2f;
 
