@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938a96ffd87fc304bb2868adc96de122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 519420031}
   _uiController: {fileID: 498510214}
   _colorTypes:
   - {r: 0.5294118, g: 0, b: 1, a: 1}

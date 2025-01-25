@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
 
+    [SerializeField] private Camera _mainCamera;
     [SerializeField] private UIController _uiController;
     [SerializeField] private List<Color> _colorTypes;
     
@@ -40,6 +41,13 @@ public class GameManager : MonoBehaviour
             throw new IndexOutOfRangeException("color type index out of bound");
 
         return _colorTypes[(int)colorType];
+    }
+
+    public void BubblePopped(Vector3 worldPos, ColorType colorType)
+    {
+        var screenPos = _mainCamera.WorldToScreenPoint(worldPos);
+        var color = _colorTypes[(int)colorType];
+        _uiController.AddScorePopup(screenPos, color);
     }
 
     public void AddScore(int score)

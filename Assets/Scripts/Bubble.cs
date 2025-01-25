@@ -38,7 +38,7 @@ public class Bubble : MonoBehaviour
     {
         if (other.TryGetComponent<CatBehaviour>(out var cat)
             && cat.ColorTypeType == _colorType)
-            GameManager.Instance.AddScore(10);
+            GameManager.Instance.BubblePopped(transform.position, _colorType);
         
         Destroy(gameObject);
     }
