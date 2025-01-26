@@ -152,7 +152,7 @@ public class CatBehaviour : MonoBehaviour
 
         _jumpCheck = false;
         _jumping = true;
-        _rb.AddForce(Random.Range(4.6f,5.2f) * Vector2.up, ForceMode2D.Impulse);
+        _rb.AddForce(Random.Range(4.2f,4.4f) * Vector2.up, ForceMode2D.Impulse);
         _animator.Play("Jump");
         StartCoroutine(JumpRoutine());
     }
