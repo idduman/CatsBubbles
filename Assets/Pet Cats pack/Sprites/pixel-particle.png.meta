@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1873b0b8cde592c42af5a9d73e54f898
+guid: 135048738adcd844dae9496570e80f6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5586482482060365737
-    second: wall-platform-colorwork_0
+      213: 4074169534506354510
+    second: pixel-particle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-platform-colorwork_0
+      name: pixel-particle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 615
-        height: 128
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9af862f083c278d40800000000000000
-      internalID: 5586482482060365737
+      spriteID: e4748f21b9b5a8830800000000000000
+      internalID: 4074169534506354510
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wall-platform-colorwork_0: 5586482482060365737
+      pixel-particle_0: 4074169534506354510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
