@@ -63,4 +63,14 @@ public class BubbleSpawner : MonoBehaviour
         _lastColor = color;
         bubble.SetColor(color);
     }
+
+    public void OnFinish()
+    {
+        Spawning = false;
+        var bubbles = GetComponentsInChildren<Bubble>();
+        foreach (var bubble in bubbles)
+        {
+            bubble.Pop();
+        }
+    }
 }

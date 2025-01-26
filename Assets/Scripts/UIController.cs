@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private TMP_Text _timerText;
     [SerializeField] private Transform _scorePanel;
     [SerializeField] private Transform _scorePopupParent;
     [SerializeField] private Transform _comboPopupParent;
@@ -59,5 +60,10 @@ public class UIController : MonoBehaviour
         _punchSequence = DOTween.Sequence().SetEase(Ease.Linear);
         _punchSequence.Append(_scorePanel.DOScale(1.1f, 0.05f).SetEase(Ease.OutQuad));
         _punchSequence.Append(_scorePanel.DOScale(1f, 0.05f).SetEase(Ease.InQuad));
+    }
+
+    public void SetTimerText(float roundTimer)
+    {
+        _timerText.text = $"Time: {Mathf.CeilToInt(roundTimer)}";
     }
 }

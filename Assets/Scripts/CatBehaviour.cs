@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class CatBehaviour : MonoBehaviour
@@ -19,7 +18,8 @@ public class CatBehaviour : MonoBehaviour
     
     private Animator _animator;
     private Rigidbody2D _rb;
-    
+
+    private bool _finished;
     private bool _jumping;
     private bool _jumpCheck;
     private LayerMask _groundMask;
@@ -34,6 +34,7 @@ public class CatBehaviour : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         _originalPos = _rb.position;
+        _finished = false;
     }
     
     private void OnCollisionEnter2D(Collision2D other)
@@ -49,12 +50,18 @@ public class CatBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_finished)
+            return;
+        
         if(!_jumping)
             _rb.MovePosition(_rb.position + _sideMoveSpeed * Time.fixedDeltaTime * Vector2.right);
     }
 
     private void Update()
     {
+        if (_finished)
+            return;
+        
         if (_jumping)
         {
             var vRotation = Mathf.Clamp(_rb.linearVelocityY * 30f, -65f, 65f);
@@ -155,6 +162,12 @@ public class CatBehaviour : MonoBehaviour
         _rb.AddForce(Random.Range(5.2f,5.4f) * Vector2.up, ForceMode2D.Impulse);
         _animator.Play("Jump");
         StartCoroutine(JumpRoutine());
+    }
+
+    public void Finish()
+    {
+        _finished = true;
+        _animator.Play("Idle");
     }
 
     private IEnumerator JumpRoutine()

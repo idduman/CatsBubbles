@@ -41,13 +41,9 @@ public class Bubble : MonoBehaviour
     {
         if (!_popped && other.TryGetComponent<CatBehaviour>(out var cat))
         {
-            _popped = true;
             GameManager.Instance.BubblePopped(transform.position, _colorType, cat.ColorType == _colorType);
-            
-            _popped = true;
-            _bubbleParent.gameObject.SetActive(false);
-            _popParticle.Play();
-            Destroy(gameObject, 1f);
+
+            Pop();
         }
     }
 
@@ -71,5 +67,16 @@ public class Bubble : MonoBehaviour
         var edgeColor = GameManager.Instance.GetColorEdge(colorType);
         _bubbleEdgeSprite.color = edgeColor;
         _popParticle.startColor = edgeColor;
+    }
+
+    public void Pop()
+    {
+        if (_popped)
+            return;
+        
+        _popped = true;
+        _bubbleParent.gameObject.SetActive(false);
+        _popParticle.Play();
+        Destroy(gameObject, 1f);
     }
 }
