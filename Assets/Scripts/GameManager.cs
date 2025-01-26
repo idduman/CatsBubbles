@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         Score = 0;
     }
     
-    
     public Color GetColor(ColorType colorType)
     {
         if((int)colorType > _colorTypes.Count - 1)
