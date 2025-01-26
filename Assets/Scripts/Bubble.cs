@@ -39,10 +39,10 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<CatBehaviour>(out var cat))
+        if (!_popped && other.TryGetComponent<CatBehaviour>(out var cat))
         {
-            if(cat.ColorTypeType == _colorType)
-                GameManager.Instance.BubblePopped(transform.position, _colorType);
+            _popped = true;
+            GameManager.Instance.BubblePopped(transform.position, _colorType, cat.ColorType == _colorType);
             
             _popped = true;
             _bubbleParent.gameObject.SetActive(false);

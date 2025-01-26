@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 4091791127632884260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 0.43, z: 0}
+  m_LocalPosition: {x: 3.2, y: 0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,8 +116,8 @@ MonoBehaviour:
   _scaleMax: 1
   _spawnIntervalMin: 1.8
   _spawnIntervalMax: 3
-  _speedMin: 0.6
-  _speedMax: 0.65
+  _speedMin: 0.52
+  _speedMax: 0.56
   Spawning: 0
 --- !u!1 &8913601968619078638
 GameObject:

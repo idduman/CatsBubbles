@@ -11,7 +11,7 @@ public class CatBehaviour : MonoBehaviour
     [SerializeField] private Transform _flip;
     [SerializeField] private ColorType _colorType;
 
-    public ColorType ColorTypeType => _colorType;
+    public ColorType ColorType => _colorType;
 
     private static readonly float _speed = 0.1f;
 
@@ -79,12 +79,12 @@ public class CatBehaviour : MonoBehaviour
                     break;
                 case CatState.WalkingLeft:
                     _sideMoveSpeed = -_speed;
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.1f)
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.09f)
                         ChangeState();
                     break;
                 case CatState.WalkingRight:
                     _sideMoveSpeed = _speed;
-                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.1f)
+                    if(Mathf.Abs(_rb.position.x - _originalPos.x) > 0.09f)
                         ChangeState();
                     break;
                 default:
@@ -101,9 +101,9 @@ public class CatBehaviour : MonoBehaviour
             case CatState.Idle2:
                 _stateTimer = Random.Range(0.8f, 1.4f);
                 
-                if(_rb.position.x - _originalPos.x > 0.07f)
+                if(_rb.position.x - _originalPos.x > 0.06f)
                     SetState(CatState.WalkingLeft);
-                else if(_rb.position.x - _originalPos.x < -0.07f)
+                else if(_rb.position.x - _originalPos.x < -0.06f)
                     SetState(CatState.WalkingRight);
                 else
                     SetState((CatState)Random.Range(3,5));
@@ -152,7 +152,7 @@ public class CatBehaviour : MonoBehaviour
 
         _jumpCheck = false;
         _jumping = true;
-        _rb.AddForce(Random.Range(4.8f,5f) * Vector2.up, ForceMode2D.Impulse);
+        _rb.AddForce(Random.Range(5.2f,5.4f) * Vector2.up, ForceMode2D.Impulse);
         _animator.Play("Jump");
         StartCoroutine(JumpRoutine());
     }

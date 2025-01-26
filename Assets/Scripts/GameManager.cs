@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Color> _colorTypesEdge;
     
     private int _score = 0;
+    private int _comboCount = 0;
 
     public int Score
     {
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Score = 0;
+        _comboCount = 0;
     }
     
     public Color GetColor(ColorType colorType)
@@ -51,11 +53,21 @@ public class GameManager : MonoBehaviour
         return _colorTypesEdge[(int)colorType];
     }
 
-    public void BubblePopped(Vector3 worldPos, ColorType colorType)
+    public void BubblePopped(Vector3 worldPos, ColorType colorType, bool correct)
     {
         var screenPos = _mainCamera.WorldToScreenPoint(worldPos);
         var color = _colorTypes[(int)colorType];
-        _uiController.AddScorePopup(screenPos, color);
+        
+        if (correct)
+        {
+            _uiController.AddScorePopup(screenPos, color, 10 + _comboCount * 5, _comboCount);
+            _comboCount++;
+        }
+        else
+            _comboCount = 0;
+            
+
+
     }
 
     public void AddScore(int score)

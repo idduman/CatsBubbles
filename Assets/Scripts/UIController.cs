@@ -8,7 +8,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private Transform _scorePanel;
     [SerializeField] private Transform _scorePopupParent;
+    [SerializeField] private Transform _comboPopupParent;
     [SerializeField] private RectTransform _scorePopupPrefab;
+    [SerializeField] private RectTransform _comboPopupPrefab;
 
     private Sequence _punchSequence;
     
@@ -17,10 +19,19 @@ public class UIController : MonoBehaviour
         _scoreText.text = $"Score: {score.ToString()}";
     }
 
-    public void AddScorePopup(Vector3 screenPos, Color color)
+    public void AddScorePopup(Vector3 screenPos, Color color, int score, int comboCount)
     {
         var scorePopup = Instantiate(_scorePopupPrefab, screenPos, Quaternion.identity, _scorePopupParent);
-
+        if (comboCount > 0)
+        {
+            var comboPopup = Instantiate(_comboPopupPrefab,
+                screenPos+50f*Vector3.up, Quaternion.identity, _scorePopupParent);
+            var comboText = comboPopup.GetComponentInChildren<TextMeshProUGUI>();
+            comboText.text = $"Combo x{comboCount + 1}";
+            comboText.color = color;
+            Destroy(comboPopup.gameObject, 1f);
+        }
+        
         var image = scorePopup.GetComponentInChildren<Image>();
         image.color = color;
         var scoreSequence = DOTween.Sequence().SetEase(Ease.Linear);
@@ -31,13 +42,13 @@ public class UIController : MonoBehaviour
         scoreSequence.OnComplete(() =>
         {
             Destroy(scorePopup.gameObject);
-            OnScorePopup();
+            OnScorePopup(score);
         });
     }
 
-    private void OnScorePopup()
+    private void OnScorePopup(int score)
     {
-        GameManager.Instance.AddScore(10);
+        GameManager.Instance.AddScore(score);
         PunchScore();
     }
 
