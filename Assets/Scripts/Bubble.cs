@@ -1,11 +1,10 @@
-using System;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private Transform _bubbleParent;
     [SerializeField] private SpriteRenderer _bubbleSprite;
+    [SerializeField] private SpriteRenderer _bubbleEdgeSprite;
 
     private ColorType _colorType;
     
@@ -59,5 +58,8 @@ public class Bubble : MonoBehaviour
         var color = GameManager.Instance.GetColor(colorType);
         color.a = _bubbleSprite.color.a;
         _bubbleSprite.color = color;
+        
+        var edgeColor = GameManager.Instance.GetColorEdge(colorType);
+        _bubbleEdgeSprite.color = edgeColor;
     }
 }

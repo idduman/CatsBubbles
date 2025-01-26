@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private UIController _uiController;
     [SerializeField] private List<Color> _colorTypes;
+    [SerializeField] private List<Color> _colorTypesEdge;
     
     private int _score = 0;
 
@@ -41,6 +42,14 @@ public class GameManager : MonoBehaviour
             throw new IndexOutOfRangeException("color type index out of bound");
 
         return _colorTypes[(int)colorType];
+    }
+    
+    public Color GetColorEdge(ColorType colorType)
+    {
+        if((int)colorType > _colorTypesEdge.Count - 1)
+            throw new IndexOutOfRangeException("color type index out of bound");
+
+        return _colorTypesEdge[(int)colorType];
     }
 
     public void BubblePopped(Vector3 worldPos, ColorType colorType)
