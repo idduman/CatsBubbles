@@ -18,6 +18,8 @@ public class BubbleSpawner : MonoBehaviour
 
     private float _spawnTimer;
 
+    private ColorType _lastColor = ColorType.Red;
+
     private void Start()
     {
         _spawnTimer = Random.Range(_spawnIntervalMin, _spawnIntervalMax);
@@ -41,7 +43,12 @@ public class BubbleSpawner : MonoBehaviour
         var speed = (_flipDirection ? -1f : 1f) * Random.Range(_speedMin, _speedMax);
         bubble.SetBubbleScale(Random.Range(_scaleMin, _scaleMax));
         bubble.SetHorizontalSpeed(speed);
+
         var color = (ColorType)Random.Range(0, 6);
+        while(color == _lastColor)
+            color = (ColorType)Random.Range(0, 6);
+        
+        _lastColor = color;
         bubble.SetColor(color);
     }
 }

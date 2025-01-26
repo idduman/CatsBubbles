@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private Transform _bubbleParent;
     [SerializeField] private SpriteRenderer _bubbleSprite;
     [SerializeField] private SpriteRenderer _bubbleEdgeSprite;
+    [FormerlySerializedAs("_bubbleParticle")] [SerializeField] private ParticleSystem _popParticle;
 
     private ColorType _colorType;
     
@@ -14,6 +16,8 @@ public class Bubble : MonoBehaviour
     private float _yOffset;
 
     private float _timer;
+
+    private bool _popped;
 
     private void Start()
     {
@@ -35,11 +39,16 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<CatBehaviour>(out var cat)
-            && cat.ColorTypeType == _colorType)
-            GameManager.Instance.BubblePopped(transform.position, _colorType);
-        
-        Destroy(gameObject);
+        if (other.TryGetComponent<CatBehaviour>(out var cat))
+        {
+            if(cat.ColorTypeType == _colorType)
+                GameManager.Instance.BubblePopped(transform.position, _colorType);
+            
+            _popped = true;
+            _bubbleParent.gameObject.SetActive(false);
+            _popParticle.Play();
+            Destroy(gameObject, 1f);
+        }
     }
 
     public void SetHorizontalSpeed(float hSpeed)
@@ -61,5 +70,6 @@ public class Bubble : MonoBehaviour
         
         var edgeColor = GameManager.Instance.GetColorEdge(colorType);
         _bubbleEdgeSprite.color = edgeColor;
+        _popParticle.startColor = edgeColor;
     }
 }
