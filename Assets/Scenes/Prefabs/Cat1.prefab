@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1741575186, guid: 43bfa2b184972d548a99ff0ee9ab7a9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 5162648554367383792}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ec0439cf572d8a49a1e9530569e1524, type: 2}
+  m_Controller: {fileID: 9100000, guid: 64c9724ded65e22478af6a5faf8f6571, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,11 +120,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.443
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.676
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 1662060309351705907, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4458370547924374059, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
+      propertyPath: _catSprite
+      value: 
+      objectReference: {fileID: 2807368172081950124}
     - target: {fileID: 5872207583309505945, guid: 5c2e3509a24b88b4c91444ea1f06dfc8, type: 3}
       propertyPath: m_Name
       value: Cat1

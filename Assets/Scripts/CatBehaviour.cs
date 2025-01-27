@@ -6,9 +6,10 @@ using Random = UnityEngine.Random;
 
 public class CatBehaviour : MonoBehaviour
 {
-    [SerializeField] private Transform _bottom;
-    [SerializeField] private Transform _spriteTransform; 
+    [SerializeField] private SpriteRenderer _catSprite;
+    [SerializeField] private Transform _spriteTransform;
     [SerializeField] private Transform _flip;
+    [SerializeField] private ParticleSystem _startleParticle;
     [SerializeField] private ColorType _colorType;
 
     public ColorType ColorType => _colorType;
@@ -173,15 +174,17 @@ public class CatBehaviour : MonoBehaviour
         _startling = true;
         _animator.Play("Startle");
         _rb.bodyType = RigidbodyType2D.Static;
-        _spriteTransform.DORotateQuaternion(Quaternion.identity, 0.1f)
+        _spriteTransform.DORotateQuaternion(Quaternion.identity, 0.05f)
             .SetEase(Ease.Linear);
-        _rb.DOMove(0.08f * Vector2.up, 0.1f).SetRelative().SetEase(Ease.Linear);
+        _rb.DOMove(0.08f * Vector2.up, 0.05f).SetRelative().SetEase(Ease.Linear);
         StartCoroutine(StartleRoutine());
     }
 
     public void Finish()
     {
         _finished = true;
+        _spriteTransform.DORotateQuaternion(Quaternion.identity, 0.05f)
+            .SetEase(Ease.Linear);
         _animator.Play("Idle");
     }
 
@@ -193,7 +196,19 @@ public class CatBehaviour : MonoBehaviour
 
     private IEnumerator StartleRoutine()
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.07f);
+        _startleParticle.Play();
+        
+        /*_catSprite.DOColor(new Color(1f, 0.7f, 0.7f), 0.3f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() => _catSprite.DOColor(Color.white, 0.3f)
+                .SetEase(Ease.Linear));*/
+        
+        _spriteTransform.DOScale(1.15f, 0.3f).SetEase(Ease.Linear)
+            .OnComplete(() => 
+                _spriteTransform.DOScale(1f, 0.3f).SetEase(Ease.Linear));
+        
+        yield return new WaitForSeconds(0.6f);
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _startling = false;
     }
