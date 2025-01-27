@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _timerText;
+    [SerializeField] private Slider _timerSlider;
     [SerializeField] private Transform _scorePanel;
     [SerializeField] private Transform _scorePopupParent;
     [SerializeField] private Transform _comboPopupParent;
@@ -62,8 +63,9 @@ public class UIController : MonoBehaviour
         _punchSequence.Append(_scorePanel.DOScale(1f, 0.05f).SetEase(Ease.InQuad));
     }
 
-    public void SetTimerText(float roundTimer)
+    public void SetTimerText(float roundTimer, float maxTime)
     {
         _timerText.text = $"Time: {Mathf.CeilToInt(roundTimer)}";
+        _timerSlider.value = Mathf.Clamp(roundTimer / maxTime, 0f, 1f);
     }
 }

@@ -955,6 +955,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2790896843432034378, guid: e898156cdffa48b4981e96653cd15246, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790896843432034378, guid: e898156cdffa48b4981e96653cd15246, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146203574657964525, guid: e898156cdffa48b4981e96653cd15246, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146203574657964525, guid: e898156cdffa48b4981e96653cd15246, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146203574657964525, guid: e898156cdffa48b4981e96653cd15246, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8160491578079209789, guid: e898156cdffa48b4981e96653cd15246, type: 3}
       propertyPath: m_Name
       value: UICanvas

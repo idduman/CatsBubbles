@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         Score = 0;
         _comboCount = 0;
         _roundTimer = _roundTime;
-        _uiController.SetTimerText(_roundTimer);
+        _uiController.SetTimerText(_roundTimer, _roundTime);
         _endGameCanvas.alpha = 0f;
         _endGameCanvas.gameObject.SetActive(false);
 
@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
         if (_roundTimer > 0f)
         {
             _roundTimer -= Time.deltaTime;
-            _uiController.SetTimerText(_roundTimer);
+            _uiController.SetTimerText(_roundTimer, _roundTime);
         }
         else
         {
-            _uiController.SetTimerText(0f);
+            _uiController.SetTimerText(0f, _roundTime);
             FinishGame();
         }
 
