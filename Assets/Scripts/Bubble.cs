@@ -41,9 +41,12 @@ public class Bubble : MonoBehaviour
     {
         if (!_popped && other.TryGetComponent<CatBehaviour>(out var cat))
         {
-            GameManager.Instance.BubblePopped(transform.position, _colorType, cat.ColorType == _colorType);
-
+            var correct = cat.ColorType == _colorType;
+            GameManager.Instance.BubblePopped(transform.position, _colorType, correct);
+            
             Pop();
+            if (!correct)
+                cat.Startle();
         }
     }
 

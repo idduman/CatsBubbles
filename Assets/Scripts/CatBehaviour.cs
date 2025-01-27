@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,7 @@ public class CatBehaviour : MonoBehaviour
 
     private bool _finished;
     private bool _jumping;
+    private bool _startling;
     private bool _jumpCheck;
     private LayerMask _groundMask;
 
@@ -50,16 +52,15 @@ public class CatBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_finished)
+        if (_finished || _jumping || _startling)
             return;
         
-        if(!_jumping)
-            _rb.MovePosition(_rb.position + _sideMoveSpeed * Time.fixedDeltaTime * Vector2.right);
+        _rb.MovePosition(_rb.position + _sideMoveSpeed * Time.fixedDeltaTime * Vector2.right);
     }
 
     private void Update()
     {
-        if (_finished)
+        if (_finished || _startling)
             return;
         
         if (_jumping)
@@ -163,6 +164,20 @@ public class CatBehaviour : MonoBehaviour
         _animator.Play("Jump");
         StartCoroutine(JumpRoutine());
     }
+    
+    public void Startle()
+    {
+        if (_startling)
+            return;
+
+        _startling = true;
+        _animator.Play("Startle");
+        _rb.bodyType = RigidbodyType2D.Static;
+        _spriteTransform.DORotateQuaternion(Quaternion.identity, 0.1f)
+            .SetEase(Ease.Linear);
+        _rb.DOMove(0.08f * Vector2.up, 0.1f).SetRelative().SetEase(Ease.Linear);
+        StartCoroutine(StartleRoutine());
+    }
 
     public void Finish()
     {
@@ -174,5 +189,12 @@ public class CatBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(0.45f);
         _jumpCheck = true;
+    }
+
+    private IEnumerator StartleRoutine()
+    {
+        yield return new WaitForSeconds(0.9f);
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        _startling = false;
     }
 }

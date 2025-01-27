@@ -105,6 +105,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -112,12 +125,12 @@ TextureImporter:
       name: Cat-5-Startle_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 17
-        width: 24
-        height: 15
+        x: 0
+        y: 0
+        width: 50
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +147,12 @@ TextureImporter:
       name: Cat-5-Startle_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 17
-        width: 26
-        height: 20
+        x: 50
+        y: 0
+        width: 50
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +169,12 @@ TextureImporter:
       name: Cat-5-Startle_2
       rect:
         serializedVersion: 2
-        x: 110
-        y: 17
-        width: 25
-        height: 20
+        x: 100
+        y: 0
+        width: 50
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +191,12 @@ TextureImporter:
       name: Cat-5-Startle_3
       rect:
         serializedVersion: 2
-        x: 160
-        y: 17
-        width: 25
-        height: 22
+        x: 150
+        y: 0
+        width: 50
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8513568c3f74c9c4b848c3123f415470
     internalID: 0
     vertices: []
     indices: 
@@ -209,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cat-5-Startle_0: 6605577660511169570
+      Cat-5-Startle_1: -7980598807046508558
+      Cat-5-Startle_2: -6410950183672505504
+      Cat-5-Startle_3: 5597670085833286693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
