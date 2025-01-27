@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
     
     public void SetScoreText(int score)
     {
-        _scoreText.text = $"Score: {score.ToString()}";
+        _scoreText.text = $"{score.ToString()}";
     }
 
     public void AddScorePopup(Vector3 screenPos, Color color, int score, int comboCount)
@@ -66,6 +66,6 @@ public class UIController : MonoBehaviour
     public void SetTimerText(float roundTimer, float maxTime)
     {
         _timerText.text = $"Time: {Mathf.CeilToInt(roundTimer)}";
-        _timerSlider.value = Mathf.Clamp(roundTimer / maxTime, 0f, 1f);
+        _timerSlider.value = Mathf.Clamp(1f - roundTimer / maxTime, 0f, 1f);
     }
 }
