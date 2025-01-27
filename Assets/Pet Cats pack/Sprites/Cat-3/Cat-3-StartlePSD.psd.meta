@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8a21046a99802844fba1c5d95256c72c
+guid: d49a9c5e61cd37345809e762e37ce1b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6784032011300561150
-    second: Cat-1-Startle_0
+      213: 9176657080707236295
+    second: Cat-3-Startle_0
   - first:
-      213: 6444803739846061841
-    second: Cat-1-Startle_1
+      213: -6429813156855158224
+    second: Cat-3-Startle_1
   - first:
-      213: -1759102140537115434
-    second: Cat-1-Startle_2
+      213: 3655552739164732541
+    second: Cat-3-Startle_2
   - first:
-      213: 1834328797287836931
-    second: Cat-1-Startle_3
+      213: -5130577152372644725
+    second: Cat-3-Startle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,11 +105,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-1-Startle_0
+      name: Cat-3-Startle_0
       rect:
         serializedVersion: 2
         x: 11
@@ -124,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef0e272cb29b52e50800000000000000
-      internalID: 6784032011300561150
+      spriteID: 7c1c021bef80a5f70800000000000000
+      internalID: 9176657080707236295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_1
+      name: Cat-3-Startle_1
       rect:
         serializedVersion: 2
         x: 60
@@ -146,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11f22a8fada807950800000000000000
-      internalID: 6444803739846061841
+      spriteID: 03ae38d1007b4c6a0800000000000000
+      internalID: -6429813156855158224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_2
+      name: Cat-3-Startle_2
       rect:
         serializedVersion: 2
         x: 111
@@ -168,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dce7ad5ce96697e0800000000000000
-      internalID: -1759102140537115434
+      spriteID: d7cbe9b29d12bb230800000000000000
+      internalID: 3655552739164732541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_3
+      name: Cat-3-Startle_3
       rect:
         serializedVersion: 2
         x: 161
@@ -190,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30d6c9b8258d47910800000000000000
-      internalID: 1834328797287836931
+      spriteID: b84e71c43478cc8b0800000000000000
+      internalID: -5130577152372644725
       vertices: []
       indices: 
       edges: []
@@ -209,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cat-3-Startle_0: 9176657080707236295
+      Cat-3-Startle_1: -6429813156855158224
+      Cat-3-Startle_2: 3655552739164732541
+      Cat-3-Startle_3: -5130577152372644725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

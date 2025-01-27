@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 84dc1fa5371cbd94fa367c625ce559f8
+guid: 5c9e619373d200040bb7c3d22c6cf8e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6784032011300561150
-    second: Cat-1-Startle_0
+      213: 7192088028575852583
+    second: Cat-2-Startle_0
   - first:
-      213: 6444803739846061841
-    second: Cat-1-Startle_1
+      213: 6421015172634465978
+    second: Cat-2-Startle_1
   - first:
-      213: -1759102140537115434
-    second: Cat-1-Startle_2
+      213: 1121712584584918071
+    second: Cat-2-Startle_2
   - first:
-      213: 1834328797287836931
-    second: Cat-1-Startle_3
+      213: -8201694470890327905
+    second: Cat-2-Startle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-1-Startle_0
+      name: Cat-2-Startle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 50
-        height: 50
+        x: 11
+        y: 17
+        width: 24
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef0e272cb29b52e50800000000000000
-      internalID: 6784032011300561150
+      spriteID: 7286a98e4fd6fc360800000000000000
+      internalID: 7192088028575852583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_1
+      name: Cat-2-Startle_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 50
-        height: 50
+        x: 60
+        y: 17
+        width: 25
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11f22a8fada807950800000000000000
-      internalID: 6444803739846061841
+      spriteID: ab6554e87470c1950800000000000000
+      internalID: 6421015172634465978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_2
+      name: Cat-2-Startle_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 50
-        height: 50
+        x: 111
+        y: 17
+        width: 24
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dce7ad5ce96697e0800000000000000
-      internalID: -1759102140537115434
+      spriteID: 734f44017af119f00800000000000000
+      internalID: 1121712584584918071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-1-Startle_3
+      name: Cat-2-Startle_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 50
+        x: 161
+        y: 17
+        width: 24
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30d6c9b8258d47910800000000000000
-      internalID: 1834328797287836931
+      spriteID: f90fb4a455abd2e80800000000000000
+      internalID: -8201694470890327905
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b05c342b5b9b81849b77155a047183c3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cat-1-Startle_0: 6784032011300561150
-      Cat-1-Startle_1: 6444803739846061841
-      Cat-1-Startle_2: -1759102140537115434
-      Cat-1-Startle_3: 1834328797287836931
+      Cat-2-Startle_0: 7192088028575852583
+      Cat-2-Startle_1: 6421015172634465978
+      Cat-2-Startle_2: 1121712584584918071
+      Cat-2-Startle_3: -8201694470890327905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
